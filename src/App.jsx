@@ -1,5 +1,6 @@
 import WorkSpace from "./components/WorkSpace/WorkSpace";
 import Sidebar from "./components/Sidebar/Sidebar";
+import NodesProvider from "./context/NodesProvider";
 
 function App() {
   return (
@@ -24,8 +25,10 @@ function App() {
           overflow: "hidden",
         }}
       >
-        <Sidebar />
-        <WorkSpace />
+        <NodesProvider>
+          {/* <Sidebar /> */}
+          <WorkSpace />
+        </NodesProvider>
       </div>
     </div>
   );
