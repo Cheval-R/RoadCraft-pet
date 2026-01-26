@@ -1,7 +1,7 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { NodesContext } from "../../context/NodesContext";
 
-const Node = ({ nodeData, viewport, id }) => {
+const Node = ({ nodeData, viewport }) => {
   const { setNodesList } = useContext(NodesContext);
 
   const statusChangeHandler = () => {
@@ -18,7 +18,7 @@ const Node = ({ nodeData, viewport, id }) => {
   };
   return (
     <div
-      id={id}
+      id={nodeData.id}
       className="node"
       style={{
         position: "absolute",
@@ -39,6 +39,8 @@ const Node = ({ nodeData, viewport, id }) => {
     >
       <h3
         style={{
+          display: "inline-block",
+          width: "max-content",
           overflowWrap: "break-word",
           wordBreak: "break-all",
           hyphens: "auto",
@@ -55,7 +57,7 @@ const Node = ({ nodeData, viewport, id }) => {
       >
         {nodeData.description}
       </p>
-      <label style={{ display: "flex", gap: "10px" }}>
+      <label style={{ display: "flex", gap: "10px", width: "max-content" }}>
         {nodeData.status ? (
           <p style={{ color: "green" }}>Done</p>
         ) : (
