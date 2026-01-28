@@ -26,7 +26,9 @@ function App() {
         }}
       >
         <NodesProvider>
+          <Header />
           <WorkSpace />
+          <Sidebar />s
         </NodesProvider>
       </div>
     </div>
